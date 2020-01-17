@@ -15,7 +15,9 @@ struct WeatherModel {
 
     
     var tempString: String {
-        return String(format: "%.0f", roundedTemp)
+        var tempRound = temp
+        tempRound.round()
+        return String(format: "%.0f", tempRound)
     }
     
     var condithinName: String   {
@@ -37,7 +39,7 @@ struct WeatherModel {
          case 803, 804:
              return "smoke"
          default:
-             return "fog"
+             return "cloud.fog"
          }
     }
     
